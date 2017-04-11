@@ -24,15 +24,3 @@
         </div>
     </div>
 </div>
-
-{% set popularArticles = _Article.getPopularArticles({'limit' : 3}) %}
-{% if popularArticles|length > 0 %}
-    <h2 class="text-center additional-articles__header">You might also like ...</h2>
-    <div class="card-container">
-        {% for i in 0..popularArticles|length-1 %}
-            {% if popularArticles[i] is defined %}
-                {{this.render('partials/_single-article.twig', {article: popularArticles[i], 'position': (i+1), containerClass: 'col-third'}) | raw}}
-            {% endif %}
-        {% endfor %}
-    </div>
-{% endif%}
