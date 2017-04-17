@@ -7,7 +7,7 @@
 {% set articles = articlesArr.articles %}
 
 {{this.registerJs("HomeController.listing();")}}
-<div class="layout-container">
+<div class="layout-container has-margin-top-20">
     <div class="home ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}"  data-offset="{{limit}}">
         {% if articles|length > 0 %}
             {% if articles[0] is defined %}
@@ -75,6 +75,6 @@
 {% if articles|length == 0 %}
     {% set noDataCls = '' %}
 {% endif %}
-<div class=" text-center has-margin-bottom-20 has-margin-top-20 {{noDataCls}} NoArticlesMsg">
+<div class="text-center has-margin-bottom-20 has-margin-top-20 {{noDataCls}} NoArticlesMsg">
     <p class="no-data text-center">No articles found.</p>  
 </div>
