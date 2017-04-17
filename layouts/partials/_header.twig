@@ -8,7 +8,7 @@
         {{ this.render('user-dropdown.twig', {network: network, user: user}) | raw }}
         <div class="header__heading-container">
             <div class="header__heading--left">
-                {% set logo = network.templatePath~'/static/images/themeLogo.svg'%}
+                {% set logo = network.templatePath~'/static/images/WJML_logo.svg'%}
                 {% set logoUrl = network.networkLogoLinkUrl %}
                 {% if network.logoMedia | length > 0 %}
                     {% set logo = _Media.getMediaUrl(network.logoMedia, 177, 65, {'crop': 'limit'} )%}
