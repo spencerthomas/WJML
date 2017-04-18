@@ -7,7 +7,7 @@
             {% if network.logoMedia | length > 0 %}
                 {% set logo = _Media.getMediaUrl(network.logoMedia, 124, 45, {'crop': 'limit'} )%}
             {% endif %}
-            <a href="{{logoUrl}}" class="footer__logo"><img src="{{logo}}"/></a>
+            <a href="{{logoUrl}}" class="footer__logo" style="width:128px"><img src="{{logo}}"/></a>
         <div class="footer__copyright">Copyright WJML News Talk Radio 2017</div>
         <!-- Social Links -->
             <div class="social-links" style="margin-top:20px;">
