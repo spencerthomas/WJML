@@ -8,8 +8,7 @@
                 {% set logo = _Media.getMediaUrl(network.logoMedia, 124, 45, {'crop': 'limit'} )%}
             {% endif %}
             <a href="{{logoUrl}}" class="footer__logo" style="width:128px"><img src="{{logo}}"/></a>
-        <div class="footer__copyright">Copyright WJML News Talk Radio 2017</div>
-        <!-- Social Links -->
+            <!-- Social Links -->
             <div class="social-links" style="margin-top:20px;">
                 {% if blogInfo.social['twitter'] is not empty %}
                     <a href="{{blogInfo.social['twitter']}}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -34,6 +33,7 @@
                 {% endif %}
             </div>
             <!-- end Social Links -->
+        <div class="footer__copyright" style="color:#11214a;">Copyright WJML News Talk Radio 2017</div>
         </div>
         <div class="footer-navigation" style="float:left;width:50%;">
         {% set menuItems = blogData.blogFooterMenu %}
