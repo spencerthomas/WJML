@@ -1,14 +1,15 @@
 {% set blogInfo = _Blog.getHomeBlogSettings()%}
-<footer class="footer">
+<footer class="footer" style="background:#ccc;">
     <div class="footer__container"> 
-        <div class="footer__additional-links">
-            {% set logo = network.templatePath~'/static/images/WJML.svg'%}
+        <div class="footer-left" style="float:left;width:50%;">
+        {% set logo = network.templatePath~'/static/images/WJML-footer-logo.svg'%}
             {% set logoUrl = network.networkLogoLinkUrl %}
             {% if network.logoMedia | length > 0 %}
-                {% set logo = _Media.getMediaUrl(network.logoMedia, 200, 45, {'crop': 'limit'} )%}
+                {% set logo = _Media.getMediaUrl(network.logoMedia, 124, 45, {'crop': 'limit'} )%}
             {% endif %}
             <a href="{{logoUrl}}" class="footer__logo"><img src="{{logo}}"/></a>
-            <!-- Social Links -->
+        <div class="footer__copyright">Copyright WJML News Talk Radio 2017</div>
+        <!-- Social Links -->
             <div class="social-links">
                 {% if blogInfo.social['twitter'] is not empty %}
                     <a href="{{blogInfo.social['twitter']}}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -33,7 +34,9 @@
                 {% endif %}
             </div>
             <!-- end Social Links -->
-            {% set menuItems = blogData.blogFooterMenu %}
+        </div>
+        <div class="footer-navigation" style="float:left;width:50%;">
+        {% set menuItems = blogData.blogFooterMenu %}
             {% for i in 0..4 %}
                 {% if menuItems[i] is defined %}
                     {% set menuItem = menuItems[i] %}
@@ -43,8 +46,5 @@
                 {% endif %}
             {% endfor %}
         </div>
-    </div>
-    <div class="footer__container">
-        <div class="footer__copyright">© All rights reserved.</div>
     </div>
 </footer>
