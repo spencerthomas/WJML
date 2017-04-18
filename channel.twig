@@ -16,13 +16,9 @@
 {{this.registerJs("HomeController.listing();")}}
 {{this.registerJs("HomeController.blog();")}}
 <div class="channel">
-    <div class="col-full">
-        <article class="card--channel channel-{{blogInfo.id}} {{ blogInfo.title | lower }}">
-            <div class="card card__no-image" {% if mediaCoverImage is not empty%} style="background-image: url('{{ mediaCoverImage }}');" {% endif %}>
-                <div class="card__overlay">
-                    <div class="card__content_wrap">
+<div class="card__content_wrap">
                         <div class="card__content">
-                            <h3 class="card__headline">{{blogInfo.title}}</h3>
+                            <h3 class="card__headline" style="color:#ed2837">{{blogInfo.title}}</h3>
                             <p class="card__text">{{Helper.shortStr(blogInfo.shortDescription, 80, false, true) | raw}}</p>
                             <div class="card__button-wrap">
                                 <div href="javascript:void(0)" class="button button__share">
@@ -73,10 +69,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </article>
-    </div>
+                    
     <!-- Article Listing Here -->
     <div class="card-container ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
         {% for i in 0..(articles|length-1) %}
